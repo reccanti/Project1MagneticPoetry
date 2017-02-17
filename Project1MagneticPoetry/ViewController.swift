@@ -38,7 +38,7 @@ class ViewController: UIViewController {
             
             let label = UILabel()
             label.backgroundColor = UIColor.white
-            label.text = word
+            label.text = " \(word) "
             label.sizeToFit()
             
             // get the leftmost position of the label
