@@ -96,7 +96,7 @@
 				TargetAttributes = {
 					B7E1BF501E5610D2009A5BE5 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = MCPPMCE5C6;
+						DevelopmentTeam = TJBT8WU7VE;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -261,10 +261,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = MCPPMCE5C6;
+				DEVELOPMENT_TEAM = TJBT8WU7VE;
 				INFOPLIST_FILE = Project1MagneticPoetry/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.effectuator.Project1MagneticPoetry;
+				PRODUCT_BUNDLE_IDENTIFIER = com.effectuator.Project1MagneticPoetryTJB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -274,10 +274,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = MCPPMCE5C6;
+				DEVELOPMENT_TEAM = TJBT8WU7VE;
 				INFOPLIST_FILE = Project1MagneticPoetry/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.effectuator.Project1MagneticPoetry;
+				PRODUCT_BUNDLE_IDENTIFIER = com.effectuator.Project1MagneticPoetryTJB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -302,6 +302,7 @@
 				B7E1BF651E5610D2009A5BE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
