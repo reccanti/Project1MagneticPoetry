@@ -29,13 +29,33 @@ class ViewController: UIViewController {
      */
     func placeWords() {
         view.backgroundColor = UIColor.orange
+        let lengthOffset: CGFloat = 5.0
+        var rowLength: CGFloat = lengthOffset
+        let initialHeight = lengthOffset + 30.0
+        var rowHeight: CGFloat  = initialHeight
+        
         for word in words {
+            
             let label = UILabel()
             label.backgroundColor = UIColor.white
             label.text = word
             label.sizeToFit()
-            let x = CGFloat(arc4random_uniform(280)) + 20.0
-            let y = CGFloat(arc4random_uniform(300)) + 30.0
+            
+            // get the leftmost position of the label
+            let labelOffset = label.frame.size.width / 2
+            
+            // check to see if the this will go offscreen.
+            // if so, start a new row
+            if (rowLength + labelOffset + label.frame.size.width > view.frame.width) {
+                rowLength = lengthOffset
+                rowHeight += label.frame.size.height + lengthOffset
+            }
+            
+            let x = rowLength + labelOffset + lengthOffset
+            let y: CGFloat = rowHeight
+
+            rowLength += label.frame.size.width + lengthOffset
+
             label.center = CGPoint(x: x, y: y)
             view.addSubview(label)
             
