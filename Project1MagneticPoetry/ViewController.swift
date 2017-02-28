@@ -14,8 +14,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        placeWords()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        placeWords()
+//        clearWords()
+        placeWords()
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,6 +68,18 @@ class ViewController: UIViewController {
             label.isUserInteractionEnabled = true
             let panGesture = UIPanGestureRecognizer(target: self, action: #selector(doPanGesture))
             label.addGestureRecognizer(panGesture)
+        }
+    }
+    
+    /**
+     * Remove the Labels from the screen so that it
+     * can be replaced with new ones
+     */
+    func clearWords() {
+        for v in view.subviews{
+            if v is UILabel{
+                v.removeFromSuperview()
+            }
         }
     }
     
