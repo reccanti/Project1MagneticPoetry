@@ -10,11 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let words = ["wolves", "vicious", "winter", "surround", "ing", "y", "ed", "door", "help", "scent", "need", "hope", "less", "hungry", "lost", "the", "is", "am", "exhaust", "come", "run", "sleep", "darkness"]
+    let wordset1 = WordSet(name: "Wolfset", words: ["wolves", "vicious", "winter", "surround", "ing", "y", "ed", "door", "help", "scent", "need", "hope", "less", "hungry", "lost", "the", "is", "am", "exhaust", "come", "run", "sleep", "darkness"])
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        placeWords()
+        placeWords(wordset: self.wordset1)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -27,14 +27,14 @@ class ViewController: UIViewController {
      * Place words on the upper part of
      * the screen
      */
-    func placeWords() {
+    func placeWords(wordset: WordSet) {
         view.backgroundColor = UIColor.orange
         let lengthOffset: CGFloat = 5.0
         var rowLength: CGFloat = lengthOffset
         let initialHeight = lengthOffset + 30.0
         var rowHeight: CGFloat  = initialHeight
         
-        for word in words {
+        for word in wordset.words {
             
             let label = UILabel()
             label.backgroundColor = UIColor.white
