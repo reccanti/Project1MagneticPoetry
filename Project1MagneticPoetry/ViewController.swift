@@ -73,5 +73,24 @@ class ViewController: UIViewController {
         let position = panGesture.location(in: view)
         label.center = position
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if (segue.identifier == "showWordSegue")
+        {
+            let wordsVC = segue.destination.childViewControllers[0] as! WordsTableVC
+            
+        }
+    }
+    
+    @IBAction func unwindToMain(segue:UIStoryboardSegue)
+    {
+        if (segue.identifier == "DoneTapped")
+        {
+            let wordsVC = segue.source as! WordsTableVC
+            //let color = colorVC.selectedColor
+            self.view.backgroundColor = UIColor.blue
+        }
+    }
 }
 
