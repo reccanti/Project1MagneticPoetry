@@ -107,7 +107,6 @@ class ViewController: UIViewController {
         if (segue.identifier == "DoneTapped")
         {
             let wordsVC = segue.source as! WordsTableVC
-            print(wordsVC.selectedWordset)
             replaceWords(wordset: wordsVC.selectedWordset)
         }
     }

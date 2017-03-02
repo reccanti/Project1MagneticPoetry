@@ -56,7 +56,6 @@ class WordsTableVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(wordsetList[indexPath.row])
         selectedWordset = wordsetList[indexPath.row]
     }
     
