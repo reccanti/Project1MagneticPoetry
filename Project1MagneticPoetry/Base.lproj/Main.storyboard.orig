@@ -1,5 +1,10 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+=======
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+>>>>>>> feature-clear-labels-wordset
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -43,20 +48,35 @@
             </objects>
             <point key="canvasLocation" x="567" y="139"/>
         </scene>
+<<<<<<< HEAD
         <!--Words TableVC-->
         <scene sceneID="MC1-Dx-2t8">
             <objects>
                 <tableViewController id="t2m-d5-BHq" customClass="WordsTableVC" customModule="Project1MagneticPoetry" customModuleProvider="target" sceneMemberID="viewController">
+=======
+        <!--Table View Controller-->
+        <scene sceneID="MC1-Dx-2t8">
+            <objects>
+                <tableViewController id="t2m-d5-BHq" sceneMemberID="viewController">
+>>>>>>> feature-clear-labels-wordset
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qzf-jr-aV9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
+<<<<<<< HEAD
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="2Ez-bX-9o9">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Ez-bX-9o9" id="d1L-Ha-dAH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+=======
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2Ez-bX-9o9">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Ez-bX-9o9" id="d1L-Ha-dAH">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+>>>>>>> feature-clear-labels-wordset
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -67,6 +87,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="uvE-EU-KeD">
+<<<<<<< HEAD
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="ADS-C9-21H">
                             <connections>
                                 <action selector="cancelTappedWithSender:" destination="t2m-d5-BHq" id="vs1-kX-Dm5"/>
@@ -74,13 +95,20 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="RfI-yH-mA3">
                             <connections>
-                                <segue destination="pLA-Po-ZNa" kind="unwind" identifier="DoneTapped" unwindAction="unwindToMainWithSegue:" id="wzm-i6-1Bv"/>
+                                <segue destination="pLA-Po-ZNa" kind="unwind" unwindAction="unwindToMainWithSegue:" id="wzm-i6-1Bv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sOS-H4-1cY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="pLA-Po-ZNa" userLabel="Exit" sceneMemberID="exit"/>
+=======
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ADS-C9-21H"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="RfI-yH-mA3"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sOS-H4-1cY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+>>>>>>> feature-clear-labels-wordset
             </objects>
             <point key="canvasLocation" x="2820" y="138.98050974512745"/>
         </scene>

@@ -9,7 +9,14 @@
 import UIKit
 
 class WordsTableVC: UITableViewController {
-
+    
+    let wordsetList = [
+        WordSet(name: "Wolfset", words: ["wolves", "vicious", "winter", "surround", "ing", "y", "ed", "door", "help", "scent", "need", "hope", "less", "hungry", "lost", "the", "is", "am", "exhaust", "come", "run", "sleep", "darkness"]),
+        WordSet(name: "Arrrset", words: ["ahoy", "matey", "shiver", "me", "timbers", "land", "ho", "avast", "lily-livered", "sea", "scallywag","s", "raise", "the", "jolly", "Roger", "doubloons", "Arr!", "Davey", "Jones", "locker", "a", "pirate", "'s", "life", "for", "me", "yo", "ho", "Yarr!"]),
+        WordSet(name: "Baconset", words: ["the", "bacon", "most", "bacon", "important", "bacon", "meal", "bacon", "of", "bacon", "the", "bacon", "day", "bacon", "serving", "bacon", "it", "bacon", "up", "bacon", "Bacon", "'s", "bacon", "way"])
+    ]
+    
+    var selectedWordset: WordSet!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,13 +50,14 @@ class WordsTableVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        cell.textLabel?.text = "test"
+        cell.textLabel?.text = wordsetList[indexPath.row].name
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        print(wordsetList[indexPath.row])
+        selectedWordset = wordsetList[indexPath.row]
     }
     
     @IBAction func cancelTapped(sender: AnyObject)

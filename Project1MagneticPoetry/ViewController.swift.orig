@@ -10,11 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let wordset1 = WordSet(name: "Wolfset", words: ["wolves", "vicious", "winter", "surround", "ing", "y", "ed", "door", "help", "scent", "need", "hope", "less", "hungry", "lost", "the", "is", "am", "exhaust", "come", "run", "sleep", "darkness"])
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        placeWords(wordset: WordSet(name: "blank", words: []))
+<<<<<<< HEAD
+=======
+        placeWords(wordset: self.wordset1)
+>>>>>>> feature-wordset-model
         // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        placeWords()
+//        clearWords()
+        placeWords()
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,39 +88,12 @@ class ViewController: UIViewController {
     }
     
     /**
-     * Clear the screen of UILabels and
-     */
-    func replaceWords(wordset: WordSet) {
-        clearWords()
-        placeWords(wordset: wordset)
-    }
-    
-    /**
      * Allow a UILabel to be drawn
      */
     func doPanGesture(panGesture: UIPanGestureRecognizer) {
         let label = panGesture.view as! UILabel
         let position = panGesture.location(in: view)
         label.center = position
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        if (segue.identifier == "showWordSegue")
-        {
-            let wordsVC = segue.destination.childViewControllers[0] as! WordsTableVC
-            
-        }
-    }
-    
-    @IBAction func unwindToMain(segue:UIStoryboardSegue)
-    {
-        if (segue.identifier == "DoneTapped")
-        {
-            let wordsVC = segue.source as! WordsTableVC
-            print(wordsVC.selectedWordset)
-            replaceWords(wordset: wordsVC.selectedWordset)
-        }
     }
 }
 
