@@ -97,7 +97,7 @@ class ViewController: UIViewController {
     {
         if (segue.identifier == "showWordSegue")
         {
-            let wordsVC = segue.destination.childViewControllers[0] as! WordsTableVC
+            let _ = segue.destination.childViewControllers[0] as! WordsTableVC
             
         }
     }
