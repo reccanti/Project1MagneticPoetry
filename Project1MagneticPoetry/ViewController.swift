@@ -13,8 +13,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        placeWords(wordset: WordSet(name: "blank", words: []))
-        // Do any additional setup after loading the view, typically from a nib.
+        placeWords(wordset: AppData.shared.selectedWordset)
     }
 
     override func didReceiveMemoryWarning() {
@@ -106,8 +105,7 @@ class ViewController: UIViewController {
     {
         if (segue.identifier == "DoneTapped")
         {
-            let wordsVC = segue.source as! WordsTableVC
-            replaceWords(wordset: wordsVC.selectedWordset)
+            replaceWords(wordset: AppData.shared.selectedWordset)
         }
     }
 }
