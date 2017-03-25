@@ -87,6 +87,7 @@ class AppData {
      * Save the current configuration to UserDefaults
      */
     public func saveDefaultsData() {
+        print("saving defaults")
         let defaults = UserDefaults.standard
         defaults.set(selectedWordSet.name, forKey: wordSetKey)
         defaults.synchronize()

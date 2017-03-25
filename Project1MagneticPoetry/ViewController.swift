@@ -14,6 +14,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         placeWords(wordset: AppData.shared.selectedWordSet)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(saveDefaultsData),
+            name: NSNotification.Name.UIApplicationWillResignActive,
+            object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +26,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     /**
      * Place words on the upper part of
      * the screen
@@ -91,6 +100,16 @@ class ViewController: UIViewController {
         let position = panGesture.location(in: view)
         label.center = position
     }
+    
+    /**
+     * When this view is exited, save the config to
+     * user defaults
+     */
+    func saveDefaultsData() {
+        AppData.shared.saveDefaultsData()
+    }
+    
+    // MARK: - Functions for unwinding to this view
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
