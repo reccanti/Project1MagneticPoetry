@@ -13,7 +13,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        placeWords(wordset: AppData.shared.selectedWordset)
+        placeWords(wordset: AppData.shared.selectedWordSet)
     }
 
     override func didReceiveMemoryWarning() {
@@ -105,7 +105,7 @@ class ViewController: UIViewController {
     {
         if (segue.identifier == "DoneTapped")
         {
-            replaceWords(wordset: AppData.shared.selectedWordset)
+            replaceWords(wordset: AppData.shared.selectedWordSet)
         }
     }
 }

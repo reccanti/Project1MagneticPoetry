@@ -41,7 +41,7 @@ class WordsTableVC: UITableViewController {
      * Returns the number of rows in the given section
      */
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return AppData.shared.availableWordsets.count
+        return AppData.shared.availableWordSets.count
     }
 
     /**
@@ -50,7 +50,7 @@ class WordsTableVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        cell.textLabel?.text = AppData.shared.availableWordsets[indexPath.row].name
+        cell.textLabel?.text = AppData.shared.availableWordSets[indexPath.row].name
 
         return cell
     }
@@ -60,7 +60,7 @@ class WordsTableVC: UITableViewController {
      * This sets the selected wordset to the one at the given row
      */
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        AppData.shared.selectedWordset = AppData.shared.availableWordsets[indexPath.row]
+        AppData.shared.selectedWordSet = AppData.shared.availableWordSets[indexPath.row]
     }
     
     // MARK: - IBActions
