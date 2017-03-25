@@ -8,8 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    var backgroundImage:UIImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,6 +110,41 @@ class ViewController: UIViewController {
             let wordsVC = segue.source as! WordsTableVC
             replaceWords(wordset: wordsVC.selectedWordset)
         }
+    }
+    
+    @IBAction func share(_ sender:AnyObject) {
+        let image = self.view.takeSnapshot()
+        let textToShare = "I just used Magnetic Poetry!"
+        let Website = NSURL(string: "https://github.com/reccanti/Project1MagneticPoetry")
+        let objectsToShare:[AnyObject] = [textToShare as AnyObject,Website!,image!]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        activityVC.excludedActivityTypes = [UIActivityType.print]
+        if (UIDevice.current.userInterfaceIdiom == .pad) {
+            activityVC.popoverPresentationController?.sourceView = self.view
+        }
+        self.present(activityVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func cameraButtonTapped(_ sender: AnyObject) {
+        let imagePickerController = UIImagePickerController()
+
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = true
+        self.present(imagePickerController, animated: true, completion: { imageP in })
+        }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        print("finished picking")
+        let image:UIImage = info[UIImagePickerControllerEditedImage] as! UIImage
+        backgroundImage = image
+        (self.view as! UIImageView).contentMode = .scaleAspectFit
+        (self.view as! UIImageView).image = backgroundImage
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        print("cancelled")
+        picker.dismiss(animated: true, completion: nil)
     }
 }
 

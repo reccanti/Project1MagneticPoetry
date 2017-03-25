@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89EF57F81E87033300986E4B /* UIView+takeSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF57F71E87033300986E4B /* UIView+takeSnapshot.swift */; };
 		B7A5EAC41E660823009B6567 /* Wordset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A5EAC31E660823009B6567 /* Wordset.swift */; };
 		B7DEB3BF1E68850D00003070 /* MyAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DEB3BE1E68850D00003070 /* MyAppData.swift */; };
 		B7E1BF551E5610D2009A5BE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E1BF541E5610D2009A5BE5 /* AppDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		89EF57F71E87033300986E4B /* UIView+takeSnapshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+takeSnapshot.swift"; sourceTree = "<group>"; };
 		B7A5EAC31E660823009B6567 /* Wordset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wordset.swift; sourceTree = "<group>"; };
 		B7DEB3BE1E68850D00003070 /* MyAppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAppData.swift; sourceTree = "<group>"; };
 		B7E1BF511E5610D2009A5BE5 /* Project1MagneticPoetry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project1MagneticPoetry.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +72,7 @@
 			children = (
 				B7A5EAC21E660812009B6567 /* Model */,
 				B7E1BF541E5610D2009A5BE5 /* AppDelegate.swift */,
+				89EF57F71E87033300986E4B /* UIView+takeSnapshot.swift */,
 				B7E1BF561E5610D2009A5BE5 /* ViewController.swift */,
 				B7E1BF581E5610D2009A5BE5 /* Main.storyboard */,
 				B7E1BF5B1E5610D2009A5BE5 /* Assets.xcassets */,
@@ -113,7 +116,7 @@
 				TargetAttributes = {
 					B7E1BF501E5610D2009A5BE5 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = MCPPMCE5C6;
+						DevelopmentTeam = TJBT8WU7VE;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -159,6 +162,7 @@
 				B7DEB3BF1E68850D00003070 /* MyAppData.swift in Sources */,
 				B7E1BF551E5610D2009A5BE5 /* AppDelegate.swift in Sources */,
 				B7A5EAC41E660823009B6567 /* Wordset.swift in Sources */,
+				89EF57F81E87033300986E4B /* UIView+takeSnapshot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,10 +285,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = MCPPMCE5C6;
+				DEVELOPMENT_TEAM = TJBT8WU7VE;
 				INFOPLIST_FILE = Project1MagneticPoetry/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.reccanti.Project1MagneticPoetry;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tjb5203.Project1MagneticPoetry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -294,10 +298,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = MCPPMCE5C6;
+				DEVELOPMENT_TEAM = TJBT8WU7VE;
 				INFOPLIST_FILE = Project1MagneticPoetry/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.reccanti.Project1MagneticPoetry;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tjb5203.Project1MagneticPoetry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

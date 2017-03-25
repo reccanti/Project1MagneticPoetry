@@ -51,7 +51,12 @@ class WordsTableVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         cell.textLabel?.text = wordsetList[indexPath.row].name
-
+        
+        /*if (UIDevice.current.userInterfaceIdiom == .pad) {
+            cell.textLabel?.font.set
+            print("the point size is:  /(cell.textLabel?.font.pointSize)")
+        }*/
+        
         return cell
     }
     
