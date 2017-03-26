@@ -8,6 +8,20 @@
 
 import UIKit
 
+enum WordTypes: Int {
+    case Noun
+    case Verb
+    case Adjective
+    case Conjunction
+    case Pronoun
+    case Suffix
+    case Prefix
+    case Determiner
+    case Preposition
+    case Interjection
+    case Adverb
+}
+
 class WordsTableVC: UITableViewController {
     
     override func viewDidLoad() {

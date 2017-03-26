@@ -11,9 +11,11 @@ import Foundation
 class WordSet {
     
     var name: String!
-    var words: [String]!
+    //var words: [String]!
+    //var words: [[String]]!
+    var words: [(String,WordTypes)]!
     
-    init(name: String, words: [String]) {
+    init(name: String, words: [(String,WordTypes)]) {
         self.name = name
         self.words = words
     }

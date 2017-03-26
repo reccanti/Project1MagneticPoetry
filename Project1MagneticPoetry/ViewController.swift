@@ -45,8 +45,45 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         for word in wordset.words {
             
             let label = UILabel()
-            label.backgroundColor = UIColor.white
-            label.text = " \(word) "
+            
+            
+            switch word.1 {
+            case WordTypes.Verb:
+                label.backgroundColor = #colorLiteral(red: 1, green: 0.6617908478, blue: 0.6757833958, alpha: 1)
+                
+            case WordTypes.Adjective:
+                label.backgroundColor = #colorLiteral(red: 1, green: 0.8466758728, blue: 0.5059751272, alpha: 1)
+                
+            case WordTypes.Conjunction:
+                label.backgroundColor = #colorLiteral(red: 0.9896666408, green: 0.9449744821, blue: 0.6159284711, alpha: 1)
+                
+            case WordTypes.Pronoun:
+                label.backgroundColor = #colorLiteral(red: 0.8029432893, green: 0.9747024179, blue: 0.4887778163, alpha: 1)
+                
+            case WordTypes.Determiner:
+                label.backgroundColor = #colorLiteral(red: 0.6529548168, green: 0.9764088988, blue: 0.7021540403, alpha: 1)
+                
+            case WordTypes.Preposition:
+                label.backgroundColor = #colorLiteral(red: 0.739595592, green: 0.9772180915, blue: 0.9894768596, alpha: 1)
+                
+            case WordTypes.Interjection:
+                label.backgroundColor = #colorLiteral(red: 0.6818062663, green: 0.7663550973, blue: 0.9898191094, alpha: 1)
+                
+            case WordTypes.Adverb:
+                label.backgroundColor = #colorLiteral(red: 0.7850539088, green: 0.6974565387, blue: 0.9897738099, alpha: 1)
+                
+            case WordTypes.Noun:
+                label.backgroundColor = #colorLiteral(red: 1, green: 0.7044786811, blue: 0.8498353958, alpha: 1)
+                
+            case WordTypes.Prefix:
+                label.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+                
+            case WordTypes.Suffix:
+                label.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+            }
+            
+            
+            label.text = " \(word.0) "
             
             // increase font size on Ipads
             if (UIDevice.current.userInterfaceIdiom == .pad) {
