@@ -14,8 +14,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        placeWords(wordset: WordSet(name: "blank", words: []))
-        // Do any additional setup after loading the view, typically from a nib.
+        placeWords(wordset: AppData.shared.selectedWordSet)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(saveDefaultsData),
+            name: NSNotification.Name.UIApplicationWillResignActive,
+            object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,6 +27,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Dispose of any resources that can be recreated.
     }
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     /**
      * Place words on the upper part of
      * the screen
@@ -101,6 +109,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         label.center = position
     }
     
+    /**
+     * When this view is exited, save the config to
+     * user defaults
+     */
+    func saveDefaultsData() {
+        AppData.shared.saveDefaultsData()
+    }
+    
+    // MARK: - Functions for unwinding to this view
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if (segue.identifier == "showWordSegue")
@@ -114,8 +132,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     {
         if (segue.identifier == "DoneTapped")
         {
-            let wordsVC = segue.source as! WordsTableVC
-            replaceWords(wordset: wordsVC.selectedWordset)
+            replaceWords(wordset: AppData.shared.selectedWordSet)
         }
     }
     

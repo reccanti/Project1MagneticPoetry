@@ -10,13 +10,6 @@ import UIKit
 
 class WordsTableVC: UITableViewController {
     
-    let wordsetList = [
-        WordSet(name: "Wolfset", words: ["wolves", "vicious", "winter", "surround", "ing", "y", "ed", "door", "help", "scent", "need", "hope", "less", "hungry", "lost", "the", "is", "am", "exhaust", "come", "run", "sleep", "darkness"]),
-        WordSet(name: "Arrrset", words: ["ahoy", "matey", "shiver", "me", "timbers", "land", "ho", "avast", "lily-livered", "sea", "scallywag","s", "raise", "the", "jolly", "Roger", "doubloons", "Arr!", "Davey", "Jones", "locker", "a", "pirate", "'s", "life", "for", "me", "yo", "ho", "Yarr!"]),
-        WordSet(name: "Baconset", words: ["the", "bacon", "most", "bacon", "important", "bacon", "meal", "bacon", "of", "bacon", "the", "bacon", "day", "bacon", "serving", "bacon", "it", "bacon", "up", "bacon", "Bacon", "'s", "bacon", "way"])
-    ]
-    
-    var selectedWordset: WordSet!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,29 +29,45 @@ class WordsTableVC: UITableViewController {
 
     // MARK: - Table view data source
 
+    /**
+     * Returns the number of sections that will be displayed in the table
+     */
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
+    /**
+     * Returns the number of rows in the given section
+     */
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 3
+        return AppData.shared.availableWordSets.count
     }
 
-    
+    /**
+     * Sets the text for the row at the given value
+     */
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        cell.textLabel?.text = wordsetList[indexPath.row].name
-        
+        cell.textLabel?.text = AppData.shared.availableWordSets[indexPath.row].name
+
         return cell
     }
     
+    /**
+     * Function that is called whenever a given row is selected.
+     * This sets the selected wordset to the one at the given row
+     */
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedWordset = wordsetList[indexPath.row]
+        AppData.shared.selectedWordSet = AppData.shared.availableWordSets[indexPath.row]
     }
     
+    // MARK: - IBActions
+    
+    /**
+     * Dismisses View Controller when the cancel button is tapped
+     */
     @IBAction func cancelTapped(sender: AnyObject)
     {
         dismiss(animated: true, completion: nil)
