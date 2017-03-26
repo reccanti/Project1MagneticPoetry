@@ -39,7 +39,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             let label = UILabel()
             label.backgroundColor = UIColor.white
             label.text = " \(word) "
+            
+            // increase font size on Ipads
+            if (UIDevice.current.userInterfaceIdiom == .pad) {
+                label.font = UIFont.systemFont(ofSize: 30, weight: UIFontWeightRegular)
+             }
+            
             label.sizeToFit()
+            
             
             // get the leftmost position of the label
             let labelOffset = label.frame.size.width / 2
